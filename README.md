@@ -1,2 +1,5 @@
-# pytorch_pruning
-Implementation of a few NN pruning methods in PyTorch, alongside testing of the Lottery Ticket Hypothesis
+# Neural Network Pruning and the Lottery Ticket Hypothesis
+
+The notebook here contains an implementation of a few NN pruning methods in PyTorch, alongside testing of the Lottery Ticket Hypothesis. The pruning methods implemented were magnitude based pruning, [Optimal Brain Damage](http://yann.lecun.com/exdb/publis/pdf/lecun-90b.pdf) and [Iterative Pruning](https://arxiv.org/abs/1506.02626).
+
+The lottery ticket hypothesis was proposed by Frankle and Carbin in their [2019 paper](https://arxiv.org/abs/1803.03635). It states that, at initialization, densely connected neural networks contain highly sparse subnetworks that can be trained in isolation to achieve performance similar to that of the original network. If true, this opens up the possibility of finding and using only these sparse subnetworks, drastically reducing the computational costs required for training, inference, and storage. The notebook implements the Iterative Magnitude Pruning method, proposed by Frankle and Carbin in the same paper, to find out and verify the existence of such _winning_ lottery ticket subnetworks.
